@@ -1,1 +1,1 @@
-html{background-color:#fff}
+html{background-color:#fff}.dark *{--color-primary: #dee2e6;--color-primary-dark: #adb5bd;--color-primary-light: #e9ecef;--color-secondary: #161616;--color-secondary-dark: #000000;--color-secondary-light: #303030;--color-accent: #3084a9;--color-accent-dark: #005472;--color-accent-light: #71adcb}
