@@ -3,37 +3,16 @@
 		<h1 class="my-0 text-4xl sm:text-5xl md:text-6xl">
 			{{ .Title }}
 		</h1>
-		{{ with .Params.subtitle}}
-		<h2 class="font-light mt-0">{{ . }}</h2>
-		{{ end }}
 	</div>
-
-	{{ $items_type := .Params.content.page_type | default "post" }}
-	{{ $items_count := .Params.content.count }}
-
-
 	<div class="mt-8 flex flex-wrap justify-around">
+		<div class="p-6 w-2/3 min-w-max mx-auto bg-accent-dark rounded-lg shadow-lg flex items-center space-x-4">
+			<div class="flex-shrink-0">
+				<img class="h-32 w-32 shadow-md" src="{{ .Params.content.audio_img }}" alt="{{ .Params.content.audio_img_alt }}">
+			</div>
+			<div>
+				<div class="text-xl font-medium text-white">{{ .Params.content.ep_title }}</div>
 
-		{{/* Filters */}}
-		{{ $query := where site.RegularPages "Type" $items_type }}
-		{{ $archive_page := site.GetPage "Section" $items_type }}
-
-		{{ if .Params.content.filters.tag }}
-		{{ $archive_page = site.GetPage (printf "tags/%s" .Params.content.filters.tag) }}
-		{{ $query = $query | intersect $archive_page.Pages }}
-		{{ end }}
-		{{ if .Params.content.filters.category }}
-		{{ $archive_page = site.GetPage (printf "categories/%s" .Params.content.filters.category) }}
-		{{ $query = $query | intersect $archive_page.Pages }}
-		{{ end }}
-
-
-		{{ range first $items_count $query }}
-		<div class="w-full md:w-1/2 lg:w-1/3 md:pl-4 lg:pl-6">
-			{{ partial "card.html" . }}
+			</div>
 		</div>
-		{{ else }}
-		{{ .Content }}
-		{{ end }}
 	</div>
 </section>

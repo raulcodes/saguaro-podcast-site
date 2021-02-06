@@ -18,11 +18,6 @@ hero_media = "/img/saguaro-cover.webp"
   label = "Episodes"
 	# Primary color
 	primary = true
-
-[[btn]]
-  url = "#contact"
-  label = 'Contact me'
-
 +++
 
 # A podcast about neighbors.
