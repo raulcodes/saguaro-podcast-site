@@ -18,9 +18,15 @@ hero_media = "/img/saguaro-cover.webp"
   label = "Episodes"
 	# Primary color
 	primary = true
+
+[[btn]]
+	# The url of the button
+  url = "/about"
+	# The text of the button
+  label = "About"
+
 +++
 
 # A podcast about neighbors.
 
 Saguaro is a podcast that explores the complex relationship between the U.S. and Mexico.
-

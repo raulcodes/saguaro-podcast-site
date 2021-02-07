@@ -1,0 +1,18 @@
+<section id="pages">
+	<div class="mt-8 flex flex-wrap justify-around">
+		<div class="p-6 w-2/3 min-w-max mx-auto bg-accent-dark rounded-lg shadow-lg flex items-center space-x-4">
+			<div class="flex-shrink-0">
+				<img class="h-32 w-32 shadow-md" src="{{ .Params.audio_img }}" alt="{{ .Params.audio_img_alt }}">
+			</div>
+			<div class="w-full">
+				<div class="text-xl font-medium text-white">{{ .Params.title }}</div>
+				<div class="my-5 h-1 w-10/12 bg-secondary opacity-40 rounded-full" />
+				<div class="py-2 flex flex-row justify-between">
+					<div class="current-time">0:00</div>
+					<div class="remaining-time">20:00</div>
+				</div>
+				<div class="h-8 w-8 rounded-lg bg-accent-light shadow-md"></div>
+			</div>
+		</div>
+	</div>
+</section>
