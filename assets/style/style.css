@@ -7,3 +7,32 @@
 #rwd-15-icon, #fwd-15-icon {
 	fill: #f6c3bf;
 }
+
+#progress-bar {
+	background-color: #f6c3bf;
+	width: 0%;
+}
+
+#pause {
+	position: absolute;
+	display: none;
+	height: 70%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	fill: #f6c3bf;
+}
+
+#play {
+	position: absolute;
+	display: block;
+	height: 70%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	fill: #f6c3bf;
+}
