@@ -1,18 +1,79 @@
 <section id="pages">
-	<div class="mt-8 flex flex-wrap justify-around">
+	<audio id="audio">
+		<source src="{{ .Params.audio_src }}" type="audio/mpeg">
+	Your browser does not support the audio element.
+	</audio>
+	<div class="mt-8 flex flex-nowrap justify-around">
 		<div class="p-6 w-2/3 min-w-max mx-auto bg-accent-dark rounded-lg shadow-lg flex items-center space-x-4">
 			<div class="flex-shrink-0">
 				<img class="h-32 w-32 shadow-md" src="{{ .Params.audio_img }}" alt="{{ .Params.audio_img_alt }}">
 			</div>
-			<div class="w-full">
+			<div class="w-full flex flex-col">
 				<div class="text-xl font-medium text-white">{{ .Params.title }}</div>
-				<div class="my-5 h-1 w-10/12 bg-secondary opacity-40 rounded-full" />
-				<div class="py-2 flex flex-row justify-between">
-					<div class="current-time">0:00</div>
-					<div class="remaining-time">20:00</div>
+				<div class="my-5 h-1 w-full relative">
+					<div class="my-5 h-1 w-full relative bg-secondary opacity-40 rounded-full"></div>
+					<div id="progress-bar" class="my-5 h-1 absolute inset-0 bg-primary opacity-40 rounded-full"></div>
 				</div>
-				<div class="h-8 w-8 rounded-lg bg-accent-light shadow-md"></div>
+				<div class="py-2 flex flex-row justify-between">
+					<div id="current-time">0:00</div>
+					<div id="remaining-time"></div>
+				</div>
+				<div class="m-0 flex flex-row justify-between">
+					<button id="play-pause" class="m-0 h-10 w-10 rounded-lg bg-accent-light shadow-md"></button>
+					<div class="m-0 flex justify-around w-1/3">
+						<button id="rwd-15" class="m-0 h-10 w-10 rounded-full bg-accent-light shadow-md"></button>
+						<button id="fwd-15" class="m-0 h-10 w-10 rounded-full bg-accent-light shadow-md"></button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<script>
+		var audio = document.getElementById('audio');
+		var playpauseBtn = document.getElementById('play-pause');
+		var rewindBtn = document.getElementById('rwd-15');
+		var forwardBtn = document.getElementById('fwd-15');
+		var currentTimeField = document.getElementById('current-time');
+		var remainingTimeField = document.getElementById('remaining-time');
+		var progressBar = document.getElementById('progress-bar');
+		
+		audio.addEventListener('timeupdate', updateTimes);
+		playpauseBtn.addEventListener('click', togglePlay);
+		rewindBtn.addEventListener('click', function() { seek(-15) });
+		forwardBtn.addEventListener('click', function() { seek(15) });
+		
+		audio.oncanplay = function() {	
+			var durationMin = Math.floor(audio.duration / 60);
+			var durationSec = audio.duration % 60;
+			// Set initial duration
+			remainingTimeField.innerText = `${durationMin}:${`${durationSec}`.slice(0, 2)}`;	
+		};
+
+		function updateTimes() {
+			currentTimeField.innerText = formatTime(audio.currentTime);
+
+			var timeRemaining = audio.duration - audio.currentTime;
+			remainingTimeField.innerText = formatTime(timeRemaining);
+
+			var progress = (audio.currentTime / audio.duration) * 100;
+			progressBar.style.width = `${progress}%`;
+		}
+
+		function togglePlay() {
+			audio.paused ? audio.play() : audio.pause();
+		}
+
+		function seek(interval) {
+			console.log(interval);
+			audio.currentTime += interval;
+			console.log(audio.currentTime);
+		}
+		
+		function formatTime(time) {
+			var minutes = Math.floor((time % 3600) / 60);
+			var seconds = Math.floor(time % 60);
+			var fSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+			return `${minutes}:${fSeconds.slice(0, 2)}`;
+		}
+	</script>
 </section>
