@@ -1,1 +1,1 @@
-<svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20"><path d="M15.54,9.16l-14-9A1,1,0,0,0,0,1V19a1,1,0,0,0,1.54.84l14-9A1,1,0,0,0,15.54,9.16Z" style="fill-rule:evenodd"/></svg>
+<svg class="play-pause" id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20"><path d="M15.54,9.16l-14-9A1,1,0,0,0,0,1V19a1,1,0,0,0,1.54.84l14-9A1,1,0,0,0,15.54,9.16Z" style="fill-rule:evenodd"/></svg>
