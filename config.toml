@@ -12,7 +12,7 @@ title = 'Saguaro Podcast'
 
 [params]
 customCSS = [
-	# "style/style.css",
+	"style/style.css",
 	"style/theme.sass",
 ] # Path relative to assets folder
 # customJS = ["js/console.js"] # Path relative to assets folder

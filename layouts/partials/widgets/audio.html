@@ -16,13 +16,17 @@
 				</div>
 				<div class="mb-2 flex flex-row justify-between">
 					<div id="current-time">0:00</div>
-					<div id="remaining-time"></div>
+					<div id="remaining-time">20:00</div>
 				</div>
 				<div class="m-0 flex flex-row justify-between">
 					<button id="play-pause" class="m-0 h-10 w-10 rounded-lg bg-accent-light shadow-md"></button>
 					<div class="m-0 flex justify-around w-1/2">
-						<button id="rwd-15" class="m-0 h-10 w-10 rounded-full bg-accent-light shadow-md"></button>
-						<button id="fwd-15" class="m-0 h-10 w-10 rounded-full bg-accent-light shadow-md"></button>
+						<button id="rwd-15" class="m-0 h-12 w-12 rounded-full">
+							{{ partial "icons/rwd-15.svg" . }}
+						</button>
+						<button id="fwd-15" class="m-0 h-12 w-12 rounded-full">
+							{{ partial "icons/fwd-15.svg" . }}
+						</button>
 					</div>
 				</div>
 			</div>
