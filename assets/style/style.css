@@ -1,3 +1,7 @@
+#audio-player {
+	display: none;
+}
+
 #rwd-15-icon, #fwd-15-icon {
 	fill: #f6c3bf;
 }

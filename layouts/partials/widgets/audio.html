@@ -1,9 +1,9 @@
 <section id="pages">
-	<audio id="audio">
+	<audio id="audio" controls>
 		<source src="{{ .Params.audio_src }}" type="audio/mpeg">
 	Your browser does not support the audio element.
 	</audio>
-	<div class="mt-8 flex flex-nowrap justify-around">
+	<div id="audio-player" class="mt-8 flex flex-nowrap justify-around">
 		<div class="p-6 mx-auto bg-accent-dark rounded-lg shadow-lg flex items-center space-x-4">
 			<div class="flex-shrink-0">
 				<img class="h-32 w-32 shadow-md" src="{{ .Params.audio_img }}" alt="{{ .Params.audio_img_alt }}">
@@ -37,6 +37,7 @@
 	</div>
 	<script>
 		var audio = document.getElementById('audio');
+		var audioPlayer = document.getElementById('audio-player');
 		var playpauseBtn = document.getElementById('play-pause');
 		var rewindBtn = document.getElementById('rwd-15');
 		var forwardBtn = document.getElementById('fwd-15');
@@ -46,6 +47,10 @@
 		var remainingTimeField = document.getElementById('remaining-time');
 		var progressBar = document.getElementById('progress-bar');
 		
+		// Use custom audio player if js is enabled
+		audio.controls = false;
+		audioPlayer.style.display = 'block';
+
 		audio.addEventListener('timeupdate', updateTimes);
 		playpauseBtn.addEventListener('click', togglePlay);
 		rewindBtn.addEventListener('click', function() { seek(-15) });
