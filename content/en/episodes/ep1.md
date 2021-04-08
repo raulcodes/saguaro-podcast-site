@@ -4,8 +4,12 @@ subtitle = ""
 date = 2021-04-01
 description = ""
 
-audio_src = "/audio/pomp_loop.mp3"
-audio_img = "/img/saguaro-cover.webp"
-audio_img_alt = "Saguaro cover"
-
 +++
+
+{{< audio 
+  src="/audio/pomp_loop.mp3" 
+  img="/img/saguaro-cover.webp" 
+  alt="Saguaro cover"
+  title="Ep 1: The ‘w’ word: Frank W. Berkshire">}}
+
+<!-- {{ image src="/img/" }} -->

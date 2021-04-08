@@ -1,5 +1,7 @@
 #audio-player {
 	display: none;
+	width: 60%;
+	margin: 0 auto;
 }
 
 #rwd-15-icon, #fwd-15-icon {
