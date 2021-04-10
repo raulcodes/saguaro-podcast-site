@@ -29,4 +29,4 @@ hero_media = "/img/saguaro-cover.webp"
 
 # A podcast about immigrants.
 
-Saguaro is a podcast that explores the history of immigration in The United States.
+Join the host, Raul Camacho, as he stumbles through history, learning more about himself and his country.
