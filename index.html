@@ -12,8 +12,7 @@
     body {
       display: flex;
       flex-wrap: wrap;
-      height: 100vh;
-      gap: 32px;
+      height: 80vh;
       padding: 36px;
       justify-content: space-evenly;
       align-items: center;
@@ -26,21 +25,18 @@
       color: #71adcb;
     }
     #cover-photo {
-      display: grid;
-      height: 540px;
-      width: 537px;
-      border-radius: 8px;
+      padding: 18px;
+      height: auto;
+      max-width: 80%;
       background-color: #dee2e6;
-      place-items: center;
+      border-radius: 8px;
     }
   </style>
   <body>
-    <div id="cover-photo">
-      <img src="saguaro-cover.webp" height="500" width="500" />
-    </div>
-    <div>
-      <h1>A podcast about American Immigration</h1>
+    <img id="cover-photo" src="saguaro-cover.webp" width="500" />
+    <span>
+      <h1>A podcast about immigration</h1>
       <p>Join the host, <a href="https://raulcodes.com">Raul Camacho</a>, as he stumbles through history, learning more about himself and immigration.</p>
-    </div>
+    </span>
   </body>
 </html>
