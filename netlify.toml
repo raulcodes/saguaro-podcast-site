@@ -3,3 +3,5 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "default-src 'none'; base-uri 'self'; form-action 'none'; style-src 'self' https://use.typekit.net https://p.typekit.net; font-src https://use.typekit.net; script-src https://plausible.io/js/plausible.js; connect-src https://plausible.io/api/event; img-src 'self' data:"
