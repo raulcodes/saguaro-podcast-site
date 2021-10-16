@@ -1,10 +1,5 @@
 body {
-  display: flex;
-  flex-wrap: wrap;
-  height: 80vh;
-  padding: 36px;
-  justify-content: space-evenly;
-  align-items: center;
+  margin: 0;
   font-family: alegreya, serif;
   color: #dee2e6;
   background-color: #223752;
@@ -14,10 +9,38 @@ a {
   color: #71adcb;
   text-decoration: none;
 }
+#hero {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80vh;
+  padding: 36px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#episode-section {
+  height: 50vh;
+  padding: 36px;
+  text-align: center;
+  color: #223752;
+  background-color: #dee2e6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23223752' fill-opacity='0.28' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+#episodes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.episode {
+  height: 375px;
+  width: 300px;
+  margin: 18px;
+  background-color: #223752;
+}
 #cover-photo {
   padding: 18px;
   height: auto;
   max-width: 80%;
   background-color: #dee2e6;
-  border-radius: 8px;
+  border-radius: 12px;
 }
